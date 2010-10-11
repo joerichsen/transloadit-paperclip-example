@@ -1,0 +1,8 @@
+<h1>Users</h1>
+<ul>
+  <% for user in @users %>
+    <li> <%= image_tag user.avatar.url %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'create new user', new_user_path %>

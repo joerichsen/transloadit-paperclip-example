@@ -1,0 +1,12 @@
+<h1>Create new user</h1>
+
+<% form_for(@user, :html => { :multipart => true }) do |f| %>
+	<p>
+		<%= f.label :avatar %><br />
+		<%= f.file_field :avatar %>
+	</p>
+	<p>
+	  <%= f.submit %> or <%= link_to 'cancel', users_path %>
+	</p>
+<% end %>
+
