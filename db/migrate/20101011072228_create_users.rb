@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :avatar_content_type
       t.integer :avatar_file_size
       t.datetime :avatar_updated_at
+      t.string :avatar_unique_prefix
 
       t.timestamps
     end

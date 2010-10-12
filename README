@@ -1,6 +1,31 @@
 A sample Rails 3 app using Transloadit, Paperclip and S3 to manage images.
 
 Instructions
+
 - check out the project
+
 - cp config/s3.yml.example config/s3.yml and add your Amazon credentials
 
+- Goto https://transloadit.com/templates/add and put in something like this
+
+  {
+  "steps":
+  { "store":
+      { "robot": "/s3/store"
+      , "bucket": "transloadit-paperclip-example"
+      , "path": "avatars/${unique_prefix}/original/${file.urlName}"
+      , "key": "YOURSECRETACCESSID"
+      , "secret": " YOUR-secRE/TACCe\ssKEy"
+      }
+    }
+  }
+
+- save the template and copy the template id
+
+- cp config/transloadit.yml.example config/transloadit.yml and add the template
+  id you just created and your Auth Key found on this page
+  https://transloadit.com/accounts/credentials
+
+TODO
+- add resizing examples
+- add authentication

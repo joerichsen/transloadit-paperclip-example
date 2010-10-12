@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20101011072228) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "avatar_unique_prefix"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

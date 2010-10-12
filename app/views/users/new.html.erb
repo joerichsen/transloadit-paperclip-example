@@ -1,12 +1,25 @@
 <h1>Create new user</h1>
 
-<% form_for(@user, :html => { :multipart => true }) do |f| %>
+<%= form_tag('http://api2.transloadit.com/assemblies', :multipart => true, :id => 'new_user_form') do %>
+  <%= hidden_field_tag :params, @transloadit_params.to_json %>
 	<p>
-		<%= f.label :avatar %><br />
-		<%= f.file_field :avatar %>
+		<%= label_tag :avatar %><br />
+		<%= file_field_tag :avatar %>
 	</p>
 	<p>
-	  <%= f.submit %> or <%= link_to 'cancel', users_path %>
+	  <%= submit_tag %> or <%= link_to 'cancel', users_path %>
 	</p>
 <% end %>
+
+<script type="text/javascript">
+var tlProtocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+document.write(unescape("%3Cscript src='" + tlProtocol + "assets.transloadit.com/js/jquery.transloadit2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+   // We call .transloadit() after the DOM is initialized:
+   $(document).ready(function() {
+     $('#new_user_form').transloadit();
+   });
+</script>
+  
 
